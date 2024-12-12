@@ -90,16 +90,16 @@ Algoritma ini tahan terhadap outlier dengan menggabungkan metode Least Squares (
 3. Menggunakan metrik evaluasi seperti MSE, MAE, RMSE, dan R² untuk mengukur performa.  
 4. Mengoptimalkan model dengan grid search atau hyperparameter tuning:  
    - **Huber Regressor:** Menguji parameter `epsilon`, `alpha`, dan `max_iter`. Parameter terbaik adalah `{'alpha': 0.01, 'epsilon': 2.0, 'max_iter': 100}`.  
-   - **SVR:** Menguji parameter `kernel`, `C`, dan `epsilon`. Parameter terbaik adalah `{'C': 1, 'epsilon': 0.1, 'kernel': 'linear'}`.  
+   - **SVR:** Menguji parameter `kernel`, `C`, dan `epsilon`. Parameter terbaik adalah `{'C': 10, 'epsilon': 0.3, 'kernel': 'linear'}`.  
 
 **Hasil Evaluasi:**  
 - **Huber Regressor:**  
-  - MSE pada data training: ~18,480,694.57  
-  - MSE pada data testing: ~25,177,990.88  
+  - MSE pada data training: ~18,480,005.17
+  - MSE pada data testing: ~25,177,095.35
   - Kesalahan lebih tinggi pada data testing, menunjukkan adanya overfitting.  
 - **SVR:**  
-  - MSE pada data training: ~40,114,366.68  
-  - MSE pada data testing: ~42,742,505.68  
+  - MSE pada data training: ~39,541,221.08
+  - MSE pada data testing: ~42,200,364.02
   - Tingkat kesalahan lebih tinggi pada data testing, juga menunjukkan overfitting.  
 
 **Kelebihan dan Kekurangan Algoritma:**  
@@ -135,25 +135,24 @@ di mana:
 
 | Model  | Train MSE  | Test MSE   | Train Eval | Test Eval |
 |--------|------------|------------|------------|-----------|
-| Huber  | 18,480,694.57 | 25,177,990.88 | 18,104,561.09 | 24,212,812.87 |
-| SVR    | 40,114,366.68 | 42,742,505.68 | 18,614,533.70 | 25,605,704.54 |
+| Huber  | 18,480,005.17 | 25,177,095.35 | 18,069,346.97 | 24,133,879.74 |
+| SVR    | 39,541,221.08 | 42,200,364.02 | 21,675,142.50 | 26,666,895.77 |
 
 **Grafik Evaluasi Model**  
-(Gambar grafik hasil evaluasi model setelah penerapan hyperparameter)
 
 MSE merupakan metrik evaluasi umum untuk masalah regresi karena mengukur perbedaan antara prediksi dan nilai aktual secara keseluruhan dan memberi bobot lebih pada perbedaan besar. Namun, MSE juga sensitif terhadap outlier, di mana nilai ekstrem dapat memengaruhi MSE secara signifikan. Oleh karena itu, metrik alternatif seperti Mean Absolute Error (MAE) sering digunakan untuk memberikan gambaran kinerja model yang lebih lengkap.
 
 **Kesimpulan Berdasarkan Evaluasi MSE:**
 - **MSE pada Data Training:**  
-  Model Huber memiliki MSE yang lebih rendah (18,480,694.57) dibandingkan dengan SVR (40,114,366.68), yang menunjukkan bahwa Huber lebih akurat dalam memprediksi pada data training.
+  Model Huber memiliki MSE yang lebih rendah (18,480,005.17) dibandingkan dengan SVR (39,541,221.08), yang menunjukkan bahwa Huber lebih akurat dalam memprediksi pada data training.
 
 - **MSE pada Data Testing:**  
-  Model Huber juga memiliki MSE lebih rendah pada data testing (25,177,990.88) dibandingkan dengan SVR (42,742,505.68), yang menunjukkan bahwa Huber lebih baik dalam melakukan prediksi pada data yang belum pernah dilihat sebelumnya.
+  Model Huber juga memiliki MSE lebih rendah pada data testing (25,177,095.35) dibandingkan dengan SVR (42,200,364.02), yang menunjukkan bahwa Huber lebih baik dalam melakukan prediksi pada data yang belum pernah dilihat sebelumnya.
 
 - **Evaluation Score pada Data Training:**  
-  Kedua model memiliki evaluasi score yang serupa pada data training (Huber: 18,104,561.09, SVR: 18,614,533.70), meskipun Huber sedikit lebih baik.
+  Model Huber juga memberikan evaluasi score yang lebih rendah pada data training (18,069,346.97) dibandingkan dengan SVR (21,675,142.50), menunjukkan kinerja yang lebih baik.
 
 - **Evaluation Score pada Data Testing:**  
-  Model Huber juga memberikan evaluasi score yang lebih rendah pada data testing (24,212,812.87) dibandingkan dengan SVR (25,605,704.54), menunjukkan kinerja yang lebih baik.
+  Model Huber juga memberikan evaluasi score yang lebih rendah pada data testing (24,133,879.74) dibandingkan dengan SVR (26,666,895.77), menunjukkan kinerja yang lebih baik.
 
 Berdasarkan hasil ini, model Huber lebih unggul daripada SVR dalam memprediksi premi asuransi kesehatan, karena memiliki MSE yang lebih rendah dan evaluasi score yang lebih baik pada data testing. Oleh karena itu, model Huber dianggap lebih optimal dalam proyek ini untuk perkiraan premi asuransi kesehatan dengan tingkat akurasi yang lebih tinggi.
