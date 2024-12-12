@@ -2,85 +2,158 @@
 
 ## Domain Proyek
 
-Pada bagian ini, kamu perlu menuliskan latar belakang yang relevan dengan proyek yang diangkat.
+**Proyek "Medical Insurance Premium Prediction"** berfokus pada industri asuransi kesehatan, sebuah sektor penting yang menyediakan perlindungan finansial terhadap risiko kesehatan bagi individu dan keluarga. Dalam konteks ini, perusahaan asuransi menawarkan layanan dengan menetapkan premi kepada pemegang polis.
 
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Jelaskan mengapa dan bagaimana masalah tersebut harus diselesaikan
-- Menyertakan hasil riset terkait atau referensi. Referensi yang diberikan harus berasal dari sumber yang kredibel dan author yang jelas.
-  
-  Format Referensi: [Judul Referensi](https://scholar.google.com/) 
+Proyek ini bertujuan mengembangkan model prediktif untuk membantu perusahaan asuransi menghitung premi asuransi kesehatan dengan lebih presisi. Dengan mempertimbangkan berbagai faktor risiko, seperti usia, riwayat penyakit kronis, sejarah keluarga terkait penyakit serius, pengalaman menjalani operasi besar, serta data fisik seperti tinggi dan berat badan, model ini dapat menghasilkan estimasi premi yang lebih relevan dan sesuai dengan risiko yang dihadapi individu.
+
+Model prediktif ini dirancang untuk memberikan estimasi premi yang lebih adil bagi calon pemegang polis. Dengan menganalisis faktor risiko secara menyeluruh, model ini dapat meminimalkan ketidakadilan dalam penentuan premi, sehingga jumlah premi yang dibayarkan mencerminkan risiko kesehatan yang sebenarnya.
+
+Dengan memanfaatkan model ini, perusahaan asuransi dapat menetapkan premi berdasarkan risiko individu, membantu mereka mengelola potensi kerugian keuangan secara lebih efektif. Teknologi prediktif ini dapat mempercepat dan menyederhanakan proses penetapan premi, mengurangi waktu serta sumber daya yang dibutuhkan.
+
+Calon pemegang polis akan menerima estimasi premi yang mencerminkan risiko kesehatan mereka secara lebih proporsional. Premi yang dihitung berdasarkan profil risiko individu memungkinkan pemegang polis mendapatkan perlindungan yang optimal sesuai dengan kebutuhan mereka, memberikan rasa aman dalam menghadapi potensi risiko kesehatan.
+
+Secara keseluruhan, model prediktif yang dikembangkan dalam proyek ini memberikan manfaat signifikan bagi perusahaan asuransi dan calon pemegang polis. Perusahaan dapat mengelola risiko dan menentukan premi dengan lebih efisien, sementara calon pemegang polis mendapatkan premi yang lebih adil dan sesuai dengan kebutuhan mereka.
 
 ## Business Understanding
 
-Pada bagian ini, kamu perlu menjelaskan proses klarifikasi masalah.
+Proyek ini dirancang untuk mendukung perusahaan asuransi kesehatan dengan karakteristik bisnis berikut:
+1. Perusahaan memiliki fokus kuat pada optimalisasi penggunaan data untuk meningkatkan pengambilan keputusan. Mereka menyadari pentingnya analisis prediktif dan teknologi machine learning dalam menghitung premi asuransi berdasarkan risiko individu.
+2. Dengan akses ke data pelanggan yang luas dan terperinci, termasuk informasi usia, riwayat medis, operasi sebelumnya, alergi, riwayat penyakit keluarga, serta data fisik seperti tinggi dan berat badan, perusahaan dapat memanfaatkan data ini sebagai sumber utama untuk mengembangkan model prediktif yang akurat.
+3. Perusahaan berkomitmen untuk meningkatkan daya saing di pasar asuransi kesehatan dengan menggunakan teknologi prediktif untuk menetapkan premi yang lebih akurat dan menawarkan produk asuransi yang kompetitif.
 
-Bagian laporan ini mencakup:
+Proyek ini dirancang untuk membantu perusahaan mencapai tujuan bisnisnya dengan cara berikut:
+1. Model prediktif memungkinkan perusahaan menghitung premi asuransi dengan lebih presisi, berdasarkan faktor risiko seperti usia, riwayat medis, operasi besar, dan data fisik lainnya. Keakuratan ini mendukung pengambilan keputusan berbasis data dan membantu perusahaan memitigasi risiko keuangan yang tak terduga.
+2. Teknologi analisis prediktif dan machine learning memungkinkan proses otomatisasi dalam penetapan premi, mengurangi ketergantungan pada metode manual yang lebih lambat dan rentan kesalahan. Hal ini mempercepat proses kerja dan mengoptimalkan sumber daya perusahaan.
+3. Model ini memberikan wawasan mendalam tentang pola risiko dan faktor-faktor yang memengaruhi premi asuransi kesehatan. Dengan wawasan ini, perusahaan dapat memahami kebutuhan pelanggan dengan lebih baik, mengidentifikasi tren pasar, serta membuat strategi bisnis yang lebih terinformasi.
+4. Dengan menawarkan premi yang lebih akurat dan adil, perusahaan dapat menarik lebih banyak pelanggan dan memberikan produk yang kompetitif. Hal ini memperkuat posisi perusahaan di pasar, memperluas basis pelanggan, dan meningkatkan loyalitas mereka.
+
+Proyek ini mendukung perusahaan asuransi kesehatan dalam meningkatkan pengambilan keputusan berbasis data, meningkatkan efisiensi operasional, serta membangun keunggulan kompetitif. Dengan model prediktif ini, perusahaan dapat menawarkan produk asuransi yang lebih relevan dan kompetitif, sekaligus memberikan layanan terbaik bagi calon pemegang polis.
 
 ### Problem Statements
 
-Menjelaskan pernyataan masalah latar belakang:
-- Pernyataan Masalah 1
-- Pernyataan Masalah 2
-- Pernyataan Masalah n
+- Apa langkah-langkah yang dapat dilakukan untuk meningkatkan akurasi dalam penentuan premi asuransi kesehatan?  
+- Bagaimana cara meningkatkan transparansi dalam penetapan premi asuransi kesehatan?  
+- Apa strategi yang efektif untuk mengurangi risiko keuangan akibat penetapan premi yang tidak akurat?  
 
 ### Goals
 
-Menjelaskan tujuan dari pernyataan masalah:
-- Jawaban pernyataan masalah 1
-- Jawaban pernyataan masalah 2
-- Jawaban pernyataan masalah n
+- Mengembangkan Model Analisis Prediktif
+- Meningkatkan Transparansi
+- Mengurangi Risiko Keuangan
 
-Semua poin di atas harus diuraikan dengan jelas. Anda bebas menuliskan berapa pernyataan masalah dan juga goals yang diinginkan.
-
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Menambahkan bagian “Solution Statement” yang menguraikan cara untuk meraih goals. Bagian ini dibuat dengan ketentuan sebagai berikut: 
-
-    ### Solution statements
-    - Mengajukan 2 atau lebih solution statement. Misalnya, menggunakan dua atau lebih algoritma untuk mencapai solusi yang diinginkan atau melakukan improvement pada baseline model dengan hyperparameter tuning.
-    - Solusi yang diberikan harus dapat terukur dengan metrik evaluasi.
+Beberapa metrik yang akan digunakan untuk menilai keberhasilan proyek meliputi:
+- Akurasi Prediksi
+- Tingkat Transparansi
+- Pengurangan Risiko Keuangan
+- Mean Squared Error (MSE)
 
 ## Data Understanding
-Paragraf awal bagian ini menjelaskan informasi mengenai data yang Anda gunakan dalam proyek. Sertakan juga sumber atau tautan untuk mengunduh dataset. Contoh: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Restaurant+%26+consumer+data).
+Dataset proyek ini berisi data kesehatan dari hampir 1000 pelanggan yang diberikan secara sukarela. Dataset ini digunakan untuk membangun model prediktif yang memperkirakan biaya premi asuransi kesehatan tahunan dalam INR (₹). Dataset dapat diunduh di: [Medical Insurance Premium Prediction ([https://archive.ics.uci.edu/ml/datasets/Restaurant+%26+consumer+data](https://www.kaggle.com/datasets/tejashvi14/medical-insurance-premium-prediction/data)).
 
-Selanjutnya uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:  
+### Variabel-variabel pada Medical Insurance Premium Prediction dataset adalah sebagai berikut:
 
-### Variabel-variabel pada Restaurant UCI dataset adalah sebagai berikut:
-- accepts : merupakan jenis pembayaran yang diterima pada restoran tertentu.
-- cuisine : merupakan jenis masakan yang disajikan pada restoran.
-- dst
-
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data atau exploratory data analysis.
+- Age : Usia pelanggan
+- Diabetes : Apakah pasien memiliki kadar gula darah yang tidak normal
+- BloodPressureProblems : Apakah pasien memiliki tekanan darah yang tidak normal
+- AnyTransplants : Apakah pelanggan pernah menjalani transplantasi organ utama  
+- AnyChronicDiseases : Apakah pelanggan menderita penyakit kronis seperti asma, dll.  
+- Height : Tinggi badan pelanggan  
+- Weight : Berat badan pelanggan  
+- KnownAllergies : Apakah pelanggan memiliki alergi yang diketahui  
+- HistoryOfCancerInFamily : Apakah ada anggota keluarga sedarah pelanggan yang pernah menderita kanker  
+- NumberOfMajorSurgeries : Jumlah operasi besar yang pernah dijalani oleh pelanggan
+- PremiumPrice : Harga premium tahunan
 
 ## Data Preparation
-Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
+One Hot Encoding adalah teknik untuk mengonversi variabel kategorikal menjadi representasi numerik agar dapat digunakan dalam model machine learning. Hal ini penting karena sebagian besar algoritma machine learning hanya mendukung input berupa angka.  
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan proses data preparation yang dilakukan
-- Menjelaskan alasan mengapa diperlukan tahapan data preparation tersebut.
+Pandas menyediakan fungsi **pd.get_dummies()** untuk mempermudah proses One Hot Encoding. Fungsi ini akan membuat kolom-kolom baru untuk setiap nilai unik dalam fitur kategorikal. Nilai pada kolom akan diatur menjadi 1 jika sesuai dengan nilai kategori tertentu, dan 0 jika tidak.  
+
+Selain itu, membagi dataset menjadi data training dan data testing adalah langkah penting dalam pengembangan model machine learning. Pembagian ini dilakukan untuk mengevaluasi performa model pada data yang belum pernah dilihat sebelumnya dan untuk mencegah overfitting.  
+
+Data training digunakan untuk melatih model, sedangkan data testing digunakan untuk mengukur seberapa baik model memprediksi data baru. Dengan memisahkan data ini, kita dapat mengukur kemampuan model untuk mengeneralisasi pada data yang belum dikenali.  
+
+Rasio 80:20 sering digunakan untuk membagi dataset, di mana 80% data digunakan untuk pelatihan dan 20% sisanya untuk pengujian. Rasio ini dianggap seimbang karena memberikan cukup data untuk melatih model sekaligus menguji performanya. Namun, rasio tersebut dapat disesuaikan sesuai dengan kebutuhan proyek dan karakteristik dataset.  
 
 ## Modeling
-Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. Anda perlu menjelaskan tahapan dan parameter yang digunakan pada proses pemodelan.
+Dalam proses pemodelan, proyek ini menggunakan algoritma **SVR (Support Vector Regression)** dan **Huber Regressor** berdasarkan hasil dari pustaka PyCaret. Kedua algoritma ini diterapkan untuk memprediksi premi asuransi kesehatan dengan mempertimbangkan faktor risiko yang relevan.
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan kelebihan dan kekurangan dari setiap algoritma yang digunakan.
-- Jika menggunakan satu algoritma pada solution statement, lakukan proses improvement terhadap model dengan hyperparameter tuning. **Jelaskan proses improvement yang dilakukan**.
-- Jika menggunakan dua atau lebih algoritma pada solution statement, maka pilih model terbaik sebagai solusi. **Jelaskan mengapa memilih model tersebut sebagai model terbaik**.
+**Support Vector Regression (SVR):**  
+SVR adalah varian dari Support Vector Machines (SVM) yang dirancang untuk masalah regresi. Tujuannya adalah menemukan fungsi regresi yang meminimalkan kesalahan prediksi sambil mempertahankan margin maksimum. SVR mencari hyperplane (bidang) yang memisahkan data dengan margin maksimum. Hyperplane ini digunakan sebagai fungsi prediktif, memungkinkan model mentoleransi beberapa outlier di luar margin. SVR menyeimbangkan kesalahan prediksi dengan kompleksitas model. SVR mampu menangani data dengan noise atau outlier dan fleksibel dalam memilih fungsi kernel untuk memodelkan hubungan non-linear.  
+
+**Huber Regressor:**  
+Algoritma ini tahan terhadap outlier dengan menggabungkan metode Least Squares (LS) dan Least Absolute Deviations (LAD) menggunakan fungsi kerugian Huber. Huber Regressor menghitung residual (selisih antara prediksi dan nilai aktual). Jika residual kecil, digunakan fungsi LS (kuadrat residual). Namun, jika residual besar, digunakan LAD (nilai absolut residual). Pendekatan ini membuat model lebih robust terhadap outlier. Huber Regressor lebih stabil dibandingkan regresi linier biasa, terutama saat data memiliki outlier signifikan.  
+
+**Tahapan Pemodelan:**  
+1. Melatih model menggunakan data training dengan parameter default dari pustaka.  
+2. Menguji performa model pada data training dan testing.  
+3. Menggunakan metrik evaluasi seperti MSE, MAE, RMSE, dan R² untuk mengukur performa.  
+4. Mengoptimalkan model dengan grid search atau hyperparameter tuning:  
+   - **Huber Regressor:** Menguji parameter `epsilon`, `alpha`, dan `max_iter`. Parameter terbaik adalah `{'alpha': 0.01, 'epsilon': 2.0, 'max_iter': 100}`.  
+   - **SVR:** Menguji parameter `kernel`, `C`, dan `epsilon`. Parameter terbaik adalah `{'C': 1, 'epsilon': 0.1, 'kernel': 'linear'}`.  
+
+**Hasil Evaluasi:**  
+- **Huber Regressor:**  
+  - MSE pada data training: ~18,480,694.57  
+  - MSE pada data testing: ~25,177,990.88  
+  - Kesalahan lebih tinggi pada data testing, menunjukkan adanya overfitting.  
+- **SVR:**  
+  - MSE pada data training: ~40,114,366.68  
+  - MSE pada data testing: ~42,742,505.68  
+  - Tingkat kesalahan lebih tinggi pada data testing, juga menunjukkan overfitting.  
+
+**Kelebihan dan Kekurangan Algoritma:**  
+1. **Huber Regressor:**  
+   - **Kelebihan:** Stabil terhadap outlier, menghasilkan prediksi yang konsisten.  
+   - **Kekurangan:** Pemilihan nilai parameter delta membutuhkan pengujian manual.  
+2. **SVR:**  
+   - **Kelebihan:** Dapat menangani hubungan non-linear dengan fungsi kernel.  
+   - **Kekurangan:** Sangat sensitif terhadap skala data, sehingga perlu normalisasi data.  
+
+**Kesimpulan:**  
+Huber Regressor lebih unggul dibandingkan SVR dalam proyek ini, terutama karena ketahanannya terhadap outlier. Untuk meningkatkan performa, tuning hyperparameter perlu diterapkan selama evaluasi model.  
 
 ## Evaluation
-Pada bagian ini anda perlu menyebutkan metrik evaluasi yang digunakan. Lalu anda perlu menjelaskan hasil proyek berdasarkan metrik evaluasi yang digunakan.
+Metrik evaluasi yang digunakan dalam proyek ini adalah **Mean Squared Error (MSE)**, yang digunakan untuk mengukur sejauh mana perbedaan antara nilai prediksi dan nilai aktual dalam masalah regresi.
 
-Sebagai contoh, Anda memiih kasus klasifikasi dan menggunakan metrik **akurasi, precision, recall, dan F1 score**. Jelaskan mengenai beberapa hal berikut:
-- Penjelasan mengenai metrik yang digunakan
-- Menjelaskan hasil proyek berdasarkan metrik evaluasi
+**MSE** menghitung rata-rata kuadrat selisih antara nilai prediksi dan nilai aktual. Semakin kecil nilai MSE, semakin baik model dalam memberikan prediksi yang akurat. Langkah-langkah untuk menghitung MSE adalah sebagai berikut:
 
-Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan.
+1. Memiliki dataset yang berisi pasangan nilai aktual (y) dan prediksi (ŷ) untuk sejumlah contoh.
+2. Menghitung selisih antara nilai aktual dan prediksi untuk setiap contoh.
+3. Mengkuadratkan setiap selisih agar semua error memiliki kontribusi positif, terlepas dari apakah prediksi lebih rendah atau lebih tinggi dari nilai sebenarnya.
+4. Menghitung rata-rata dari kuadrat selisih dengan menjumlahkan seluruh kuadrat dan membaginya dengan jumlah contoh.
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan formula metrik dan bagaimana metrik tersebut bekerja.
+Rumus MSE:
+\[ MSE = \frac{ \Sigma (y - \hat{y})^2}{n} \]
+di mana:
+- Σ adalah penjumlahan,
+- y adalah nilai aktual,
+- ŷ adalah nilai prediksi,
+- n adalah jumlah contoh dalam dataset.
 
-**---Ini adalah bagian akhir laporan---**
+**Hasil Evaluasi Model Setelah Hyperparameter Tuning:**
 
-_Catatan:_
-- _Anda dapat menambahkan gambar, kode, atau tabel ke dalam laporan jika diperlukan. Temukan caranya pada contoh dokumen markdown di situs editor [Dillinger](https://dillinger.io/), [Github Guides: Mastering markdown](https://guides.github.com/features/mastering-markdown/), atau sumber lain di internet. Semangat!_
-- Jika terdapat penjelasan yang harus menyertakan code snippet, tuliskan dengan sewajarnya. Tidak perlu menuliskan keseluruhan kode project, cukup bagian yang ingin dijelaskan saja.
+| Model  | Train MSE  | Test MSE   | Train Eval | Test Eval |
+|--------|------------|------------|------------|-----------|
+| Huber  | 18,480,694.57 | 25,177,990.88 | 18,104,561.09 | 24,212,812.87 |
+| SVR    | 40,114,366.68 | 42,742,505.68 | 18,614,533.70 | 25,605,704.54 |
+
+**Grafik Evaluasi Model**  
+(Gambar grafik hasil evaluasi model setelah penerapan hyperparameter)
+
+MSE merupakan metrik evaluasi umum untuk masalah regresi karena mengukur perbedaan antara prediksi dan nilai aktual secara keseluruhan dan memberi bobot lebih pada perbedaan besar. Namun, MSE juga sensitif terhadap outlier, di mana nilai ekstrem dapat memengaruhi MSE secara signifikan. Oleh karena itu, metrik alternatif seperti Mean Absolute Error (MAE) sering digunakan untuk memberikan gambaran kinerja model yang lebih lengkap.
+
+**Kesimpulan Berdasarkan Evaluasi MSE:**
+- **MSE pada Data Training:**  
+  Model Huber memiliki MSE yang lebih rendah (18,480,694.57) dibandingkan dengan SVR (40,114,366.68), yang menunjukkan bahwa Huber lebih akurat dalam memprediksi pada data training.
+
+- **MSE pada Data Testing:**  
+  Model Huber juga memiliki MSE lebih rendah pada data testing (25,177,990.88) dibandingkan dengan SVR (42,742,505.68), yang menunjukkan bahwa Huber lebih baik dalam melakukan prediksi pada data yang belum pernah dilihat sebelumnya.
+
+- **Evaluation Score pada Data Training:**  
+  Kedua model memiliki evaluasi score yang serupa pada data training (Huber: 18,104,561.09, SVR: 18,614,533.70), meskipun Huber sedikit lebih baik.
+
+- **Evaluation Score pada Data Testing:**  
+  Model Huber juga memberikan evaluasi score yang lebih rendah pada data testing (24,212,812.87) dibandingkan dengan SVR (25,605,704.54), menunjukkan kinerja yang lebih baik.
+
+Berdasarkan hasil ini, model Huber lebih unggul daripada SVR dalam memprediksi premi asuransi kesehatan, karena memiliki MSE yang lebih rendah dan evaluasi score yang lebih baik pada data testing. Oleh karena itu, model Huber dianggap lebih optimal dalam proyek ini untuk perkiraan premi asuransi kesehatan dengan tingkat akurasi yang lebih tinggi.
