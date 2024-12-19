@@ -37,18 +37,23 @@ Proyek ini mendukung perusahaan asuransi kesehatan dalam meningkatkan pengambila
 
 ### Goals
 
-- Mengembangkan Model Analisis Prediktif
-- Meningkatkan Transparansi
-- Mengurangi Risiko Keuangan
+- Mengembangkan model analisis prediktif
+- Meningkatkan transparansi
+- Mengurangi risiko keuangan
 
 Beberapa metrik yang akan digunakan untuk menilai keberhasilan proyek meliputi:
-- Akurasi Prediksi
-- Tingkat Transparansi
-- Pengurangan Risiko Keuangan
+- Akurasi prediksi
+- Tingkat transparansi
+- Pengurangan risiko keuangan
 - Mean Squared Error (MSE)
 
 ## Data Understanding
-Dataset proyek ini berisi data kesehatan dari hampir 1000 pelanggan yang diberikan secara sukarela. Dataset ini digunakan untuk membangun model prediktif yang memperkirakan biaya premi asuransi kesehatan tahunan dalam INR (₹). Dataset dapat diunduh di: [Medical Insurance Premium Prediction ([https://archive.ics.uci.edu/ml/datasets/Restaurant+%26+consumer+data](https://www.kaggle.com/datasets/tejashvi14/medical-insurance-premium-prediction/data)).
+Dataset proyek ini berisi data kesehatan dari hampir 1000 pelanggan yang diberikan secara sukarela. Dataset ini digunakan untuk membangun model prediktif yang memperkirakan biaya premi asuransi kesehatan tahunan dalam INR (₹). Dataset dapat diunduh di: Medical Insurance Premium Prediction (https://www.kaggle.com/datasets/tejashvi14/medical-insurance-premium-prediction/data).
+
+Berikut informasi pada dataset :
+- Berjumlah 986 sampel dengan 11 fitur bertipe int64.
+- Lengkap (tidak ada missing value)
+- Format CSV
 
 ### Variabel-variabel pada Medical Insurance Premium Prediction dataset adalah sebagai berikut:
 
@@ -64,22 +69,59 @@ Dataset proyek ini berisi data kesehatan dari hampir 1000 pelanggan yang diberik
 - NumberOfMajorSurgeries : Jumlah operasi besar yang pernah dijalani oleh pelanggan
 - PremiumPrice : Harga premium tahunan
 
+### Exploratory Data Analysis (EDA)
+Visualisasi outlier menggunakan box plot berguna untuk memvisualisasikan distribusi data dan mendeteksi outlier. Box plot untuk kolom 'Weight' dan 'NumberOfMajorSurgeries' dibuat untuk melihat apakah ada outlier pada kedua fitur tersebut. Outlier adalah data yang nilainya jauh berbeda dari data lainnya. Pada box plot, outlier ditunjukkan sebagai titik-titik di luar batas atas dan bawah box plot.
+![Weight Outlier](https://github.com/user-attachments/assets/1d9d6498-5abb-49e4-93b5-49dad23149b8)
+![NumberOfMajorSurgeries Outlier](https://github.com/user-attachments/assets/139a962e-e1f2-4d13-897a-8cef5f2cb3a6)
+
+Selanjutnya, distribusi data pada fitur kategorikal divisualisasikan menggunakan bar plot. Tujuannya untuk melihat distribusi data pada setiap fitur kategorikal, misalnya berapa banyak orang yang memiliki diabetes, memiliki riwayat kanker dalam keluarga, dan sebagainya. 
+![Distribusi Data pada Fitur Kategorikal](https://github.com/user-attachments/assets/80087ff0-69de-4998-971b-60ed5eb2a43e)
+Sedangkan, histogram digunakan untuk memvisualisasikan distribusi data pada fitur numerikal, seperti 'Age', 'Height', dan 'Weight'.
+![Distribusi Data pada Fitur Numerikal](https://github.com/user-attachments/assets/a02a88c5-8646-48f2-b002-aad1da1da89a)
+
+Untuk memahami pengaruh fitur kategorikal terhadap 'PremiumPrice', digunakan bar plot yang menampilkan 'PremiumPrice' untuk setiap kategori. Visualisasi ini membantu mengidentifikasi kategori-kategori yang cenderung memiliki harga premi lebih tinggi atau lebih rendah, misalnya orang dengan diabetes cenderung membayar premi lebih tinggi. 
+![Hubungan PremiumPrice dengan Fitur Kategorikal](https://github.com/user-attachments/assets/61a3290f-03d1-4d79-963f-4a7d71668c8c)
+
+Selain itu, hubungan antar fitur divisualisasikan menggunakan pair plot, yang menunjukkan korelasi dan pola hubungan antar fitur tersebut. 
+![Visualisasi Korelasi Antar Fitur](https://github.com/user-attachments/assets/033bbb1d-2f7e-4799-8443-d67c70babcf8)
+Terakhir, untuk menganalisa keterkaitan antara semua fitur, digunakan correlation matrix dan visualisasi heatmap. Heatmap menunjukkan tingkat korelasi antar fitur, dengan warna yang lebih terang mengindikasikan korelasi yang lebih kuat. Analisis ini membantu dalam memahami keterkaitan antar fitur dalam dataset dan dapat memberikan wawasan yang berguna untuk pemilihan fitur dan pemodelan.
+![Matriks korelasi PremiumPrice](https://github.com/user-attachments/assets/09cd654e-4e3a-4731-86cf-2905bd4137c6)
+
 ## Data Preparation
+Dari visualisasi boxplot, dapat dilihat bahwa terdapat outlier pada kolom 'Weight' dan 'NumberOfMajorSurgeries'. Outlier pada fitur 'Weight' kemudian diatasi menggunakan Z-score. Z-score mengukur seberapa jauh suatu data dari rata-rata dalam satuan standar deviasi. Data yang memiliki Z-score lebih besar dari 3 dianggap sebagai outlier dan dihapus dari dataset.
+
 One Hot Encoding adalah teknik untuk mengonversi variabel kategorikal menjadi representasi numerik agar dapat digunakan dalam model machine learning. Hal ini penting karena sebagian besar algoritma machine learning hanya mendukung input berupa angka.  
 
-Pandas menyediakan fungsi **pd.get_dummies()** untuk mempermudah proses One Hot Encoding. Fungsi ini akan membuat kolom-kolom baru untuk setiap nilai unik dalam fitur kategorikal. Nilai pada kolom akan diatur menjadi 1 jika sesuai dengan nilai kategori tertentu, dan 0 jika tidak.  
+Pandas menyediakan fungsi **pd.get_dummies()** untuk mempermudah proses One Hot Encoding. Fungsi ini akan membuat kolom-kolom baru untuk setiap nilai unik dalam fitur kategorikal. Nilai pada kolom akan diatur menjadi 1 jika sesuai dengan nilai kategori tertentu, dan 0 jika tidak.
+
+Setelah fitur kategorikal diubah menjadi bentuk numerik menggunakan one-hot encoding, fitur kategorikal awal yang belum di-encode perlu dihapus. Hal ini dilakukan untuk menghindari redundansi data dan meningkatkan efisiensi model. Dengan menghapus fitur kategorikal awal, DataFrame hanya akan berisi fitur-fitur numerik, termasuk fitur kategorikal yang telah di-encode. Hal ini membuat data siap untuk digunakan dalam proses training model.
 
 Selain itu, membagi dataset menjadi data training dan data testing adalah langkah penting dalam pengembangan model machine learning. Pembagian ini dilakukan untuk mengevaluasi performa model pada data yang belum pernah dilihat sebelumnya dan untuk mencegah overfitting.  
 
-Data training digunakan untuk melatih model, sedangkan data testing digunakan untuk mengukur seberapa baik model memprediksi data baru. Dengan memisahkan data ini, kita dapat mengukur kemampuan model untuk mengeneralisasi pada data yang belum dikenali.  
+Data training digunakan untuk melatih model, sedangkan data testing digunakan untuk mengukur seberapa baik model memprediksi data baru. Dengan memisahkan data ini, kita dapat mengukur kemampuan model untuk menggeneralisasi pada data yang belum dikenali.  
 
-Rasio 80:20 sering digunakan untuk membagi dataset, di mana 80% data digunakan untuk pelatihan dan 20% sisanya untuk pengujian. Rasio ini dianggap seimbang karena memberikan cukup data untuk melatih model sekaligus menguji performanya. Namun, rasio tersebut dapat disesuaikan sesuai dengan kebutuhan proyek dan karakteristik dataset.  
+Rasio 80:20 sering digunakan untuk membagi dataset, di mana 80% data digunakan untuk pelatihan dan 20% sisanya untuk pengujian. Rasio ini dianggap seimbang karena memberikan cukup data untuk melatih model sekaligus menguji performanya. Namun, rasio tersebut dapat disesuaikan sesuai dengan kebutuhan proyek dan karakteristik dataset.
+
+Langkah scaling fitur numerik bertujuan untuk menyamakan rentang nilai dari fitur-fitur numerik dalam dataset. Hal ini dilakukan untuk mencegah fitur dengan rentang nilai yang lebih besar mendominasi fitur dengan rentang nilai yang lebih kecil selama proses pelatihan model. Selain itu, scaling juga dapat meningkatkan kinerja dan stabilitas algoritma machine learning.
+
+Dalam kasus ini, digunakan metode scaling StandardScaler dari library sklearn.preprocessing. Metode ini bekerja dengan menggeser distribusi setiap fitur agar memiliki mean 0 dan standar deviasi 1. Rumus yang digunakan adalah:
+
+z = (x - u) / s
+
+di mana:
+
+z adalah nilai yang telah di-scaling
+x adalah nilai asli
+u adalah mean dari fitur
+s adalah standar deviasi dari fitur
+
+Scaling diterapkan pada fitur numerik 'Age', 'Height', dan 'Weight' dalam dataset. Setelah scaling, fitur 'Age', 'Height', dan 'Weight' pada data training dan testing akan memiliki mean 0 dan standar deviasi 1. Hal ini memastikan bahwa fitur-fitur tersebut berada dalam rentang nilai yang sama dan tidak akan mendominasi satu sama lain selama proses pelatihan model.
 
 ## Modeling
 Dalam proses pemodelan, proyek ini menggunakan algoritma **SVR (Support Vector Regression)** dan **Huber Regressor** berdasarkan hasil dari pustaka PyCaret. Kedua algoritma ini diterapkan untuk memprediksi premi asuransi kesehatan dengan mempertimbangkan faktor risiko yang relevan.
 
 **Support Vector Regression (SVR):**  
-SVR adalah varian dari Support Vector Machines (SVM) yang dirancang untuk masalah regresi. Tujuannya adalah menemukan fungsi regresi yang meminimalkan kesalahan prediksi sambil mempertahankan margin maksimum. SVR mencari hyperplane (bidang) yang memisahkan data dengan margin maksimum. Hyperplane ini digunakan sebagai fungsi prediktif, memungkinkan model mentoleransi beberapa outlier di luar margin. SVR menyeimbangkan kesalahan prediksi dengan kompleksitas model. SVR mampu menangani data dengan noise atau outlier dan fleksibel dalam memilih fungsi kernel untuk memodelkan hubungan non-linear.  
+SVR adalah varian dari Support Vector Machines (SVM) yang dirancang untuk masalah regresi. Tujuannya adalah menemukan fungsi regresi yang meminimalkan kesalahan prediksi sambil mempertahankan margin maksimum. SVR mencari hyperplane (bidang) yang memisahkan data dengan margin maksimum. Hyperplane ini digunakan sebagai fungsi prediktif, memungkinkan model menoleransi beberapa outlier di luar margin. SVR menyeimbangkan kesalahan prediksi dengan kompleksitas model. SVR mampu menangani data dengan noise atau outlier dan fleksibel dalam memilih fungsi kernel untuk memodelkan hubungan non-linear.  
 
 **Huber Regressor:**  
 Algoritma ini tahan terhadap outlier dengan menggabungkan metode Least Squares (LS) dan Least Absolute Deviations (LAD) menggunakan fungsi kerugian Huber. Huber Regressor menghitung residual (selisih antara prediksi dan nilai aktual). Jika residual kecil, digunakan fungsi LS (kuadrat residual). Namun, jika residual besar, digunakan LAD (nilai absolut residual). Pendekatan ini membuat model lebih robust terhadap outlier. Huber Regressor lebih stabil dibandingkan regresi linier biasa, terutama saat data memiliki outlier signifikan.  
@@ -89,18 +131,8 @@ Algoritma ini tahan terhadap outlier dengan menggabungkan metode Least Squares (
 2. Menguji performa model pada data training dan testing.  
 3. Menggunakan metrik evaluasi seperti MSE, MAE, RMSE, dan R² untuk mengukur performa.  
 4. Mengoptimalkan model dengan grid search atau hyperparameter tuning:  
-   - **Huber Regressor:** Menguji parameter `epsilon`, `alpha`, dan `max_iter`. Parameter terbaik adalah `{'alpha': 0.01, 'epsilon': 2.0, 'max_iter': 100}`.  
-   - **SVR:** Menguji parameter `kernel`, `C`, dan `epsilon`. Parameter terbaik adalah `{'C': 10, 'epsilon': 0.3, 'kernel': 'linear'}`.  
-
-**Hasil Evaluasi:**  
-- **Huber Regressor:**  
-  - MSE pada data training: ~18,480,005.17
-  - MSE pada data testing: ~25,177,095.35
-  - Kesalahan lebih tinggi pada data testing, menunjukkan adanya overfitting.  
-- **SVR:**  
-  - MSE pada data training: ~39,541,221.08
-  - MSE pada data testing: ~42,200,364.02
-  - Tingkat kesalahan lebih tinggi pada data testing, juga menunjukkan overfitting.  
+   - **Huber Regressor:** Menguji parameter `epsilon` : [1.0, 1.5, 2.0], `alpha` : [0.0001, 0.001, 0.01], dan `max_iter` : [100, 200, 300]. Parameter terbaik adalah `{'alpha': 0.01, 'epsilon': 2.0, 'max_iter': 100}`.  
+   - **SVR:** Menguji parameter `kernel` : [`linear`, `rbf`], `C` : [0.1, 1, 10], dan `epsilon` : [0.1, 0.2, 0.3]. Parameter terbaik adalah `{'C': 10, 'epsilon': 0.3, 'kernel': 'linear'}`.
 
 **Kelebihan dan Kekurangan Algoritma:**  
 1. **Huber Regressor:**  
@@ -124,12 +156,22 @@ Metrik evaluasi yang digunakan dalam proyek ini adalah **Mean Squared Error (MSE
 4. Menghitung rata-rata dari kuadrat selisih dengan menjumlahkan seluruh kuadrat dan membaginya dengan jumlah contoh.
 
 Rumus MSE:
-\[ MSE = \frac{ \Sigma (y - \hat{y})^2}{n} \]
+MSE = (1/n) * Σ(yᵢ - ŷᵢ)²
 di mana:
 - Σ adalah penjumlahan,
 - y adalah nilai aktual,
 - ŷ adalah nilai prediksi,
 - n adalah jumlah contoh dalam dataset.
+
+**Hasil Evaluasi:**  
+- **Huber Regressor:**  
+  - MSE pada data training: ~18,480,005.17
+  - MSE pada data testing: ~25,177,095.35
+  - Kesalahan lebih tinggi pada data testing, menunjukkan adanya overfitting.  
+- **SVR:**  
+  - MSE pada data training: ~39,541,221.08
+  - MSE pada data testing: ~42,200,364.02
+  - Tingkat kesalahan lebih tinggi pada data testing, juga menunjukkan overfitting.  
 
 **Hasil Evaluasi Model Setelah Hyperparameter Tuning:**
 
@@ -137,6 +179,8 @@ di mana:
 |--------|------------|------------|------------|-----------|
 | Huber  | 18,480,005.17 | 25,177,095.35 | 18,069,346.97 | 24,133,879.74 |
 | SVR    | 39,541,221.08 | 42,200,364.02 | 21,675,142.50 | 26,666,895.77 |
+
+![Hasil Evaluasi Akhir](https://github.com/user-attachments/assets/93835e4b-7a2f-4030-8a2d-a75bea0c5be5)
 
 **Grafik Evaluasi Model**  
 
