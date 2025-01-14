@@ -74,18 +74,18 @@ Visualisasi outlier menggunakan box plot berguna untuk memvisualisasikan distrib
 ![Weight Outlier](https://github.com/user-attachments/assets/3c786cd9-0c29-4b5f-b32a-f2e02468ae4a)
 ![NumberOfMajorSurgeries Outlier](https://github.com/user-attachments/assets/5806497e-651a-44b6-985c-241fa7d1fd3d)
 
-Selanjutnya, distribusi data pada fitur kategorikal divisualisasikan menggunakan bar plot. Tujuannya untuk melihat distribusi data pada setiap fitur kategorikal, misalnya berapa banyak orang yang memiliki diabetes, memiliki riwayat kanker dalam keluarga, dan sebagainya. 
-![Distribusi Data pada Fitur Kategorikal](https://github.com/user-attachments/assets/80087ff0-69de-4998-971b-60ed5eb2a43e)
+Selanjutnya, distribusi data pada fitur kategorikal divisualisasikan menggunakan bar plot. Tujuannya untuk melihat distribusi data pada setiap fitur kategorikal, misalnya berapa banyak orang yang memiliki diabetes, memiliki riwayat kanker dalam keluarga, dan sebagainya.
+![Distribusi Data pada Fitur Kategorikal](https://github.com/user-attachments/assets/080947d8-45fe-4434-8815-9244e307f898)
 Sedangkan, histogram digunakan untuk memvisualisasikan distribusi data pada fitur numerikal, seperti 'Age', 'Height', dan 'Weight'.
-![Distribusi Data pada Fitur Numerikal](https://github.com/user-attachments/assets/a02a88c5-8646-48f2-b002-aad1da1da89a)
+![Distribusi Data pada Fitur Numerikal](https://github.com/user-attachments/assets/c17267ca-ea42-4de7-900b-c2c085bc2417)
 
-Untuk memahami pengaruh fitur kategorikal terhadap 'PremiumPrice', digunakan bar plot yang menampilkan 'PremiumPrice' untuk setiap kategori. Visualisasi ini membantu mengidentifikasi kategori-kategori yang cenderung memiliki harga premi lebih tinggi atau lebih rendah, misalnya orang dengan diabetes cenderung membayar premi lebih tinggi. 
-![Hubungan PremiumPrice dengan Fitur Kategorikal](https://github.com/user-attachments/assets/61a3290f-03d1-4d79-963f-4a7d71668c8c)
+Untuk memahami pengaruh fitur kategorikal terhadap 'PremiumPrice', digunakan bar plot yang menampilkan 'PremiumPrice' untuk setiap kategori. Visualisasi ini membantu mengidentifikasi kategori-kategori yang cenderung memiliki harga premi lebih tinggi atau lebih rendah, misalnya orang dengan diabetes cenderung membayar premi lebih tinggi.
+![Hubungan PremiumPrice dengan Fitur Kategorikal](https://github.com/user-attachments/assets/a2611cc6-516b-49c0-b33a-0845d3c92001)
 
-Selain itu, hubungan antar fitur divisualisasikan menggunakan pair plot, yang menunjukkan korelasi dan pola hubungan antar fitur tersebut. 
-![Visualisasi Korelasi Antar Fitur](https://github.com/user-attachments/assets/033bbb1d-2f7e-4799-8443-d67c70babcf8)
+Selain itu, hubungan antar fitur divisualisasikan menggunakan pair plot, yang menunjukkan korelasi dan pola hubungan antar fitur tersebut.
+![Visualisasi Korelasi Antar Fitur](https://github.com/user-attachments/assets/ddbfa003-8fff-4b8c-b628-4f3afd5a8eb3)
 Terakhir, untuk menganalisa keterkaitan antara semua fitur, digunakan correlation matrix dan visualisasi heatmap. Heatmap menunjukkan tingkat korelasi antar fitur, dengan warna yang lebih terang mengindikasikan korelasi yang lebih kuat. Analisis ini membantu dalam memahami keterkaitan antar fitur dalam dataset dan dapat memberikan wawasan yang berguna untuk pemilihan fitur dan pemodelan.
-![Matriks korelasi PremiumPrice](https://github.com/user-attachments/assets/09cd654e-4e3a-4731-86cf-2905bd4137c6)
+![Matriks korelasi PremiumPrice](https://github.com/user-attachments/assets/5c445ded-5922-4057-80f2-26400962f4d1)
 
 ## Data Preparation
 Dari visualisasi boxplot, dapat dilihat bahwa terdapat outlier pada kolom 'Weight' dan 'NumberOfMajorSurgeries'. Outlier pada fitur 'Weight' kemudian diatasi menggunakan Z-score. Z-score mengukur seberapa jauh suatu data dari rata-rata dalam satuan standar deviasi. Data yang memiliki Z-score lebih besar dari 3 dianggap sebagai outlier dan dihapus dari dataset.
@@ -180,7 +180,7 @@ di mana:
 | Huber  | 18,480,005.17 | 25,177,095.35 | 18,069,346.97 | 24,133,879.74 |
 | SVR    | 39,541,221.08 | 42,200,364.02 | 21,675,142.50 | 26,666,895.77 |
 
-![Hasil Evaluasi Akhir](https://github.com/user-attachments/assets/93835e4b-7a2f-4030-8a2d-a75bea0c5be5)
+![Hasil Evaluasi Akhir](https://github.com/user-attachments/assets/f9032e44-0a13-49e7-9ed3-cdda53de2297)
 
 **Grafik Evaluasi Model**  
 
