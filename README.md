@@ -71,8 +71,8 @@ Berikut informasi pada dataset :
 
 ### Exploratory Data Analysis (EDA)
 Visualisasi outlier menggunakan box plot berguna untuk memvisualisasikan distribusi data dan mendeteksi outlier. Box plot untuk kolom 'Weight' dan 'NumberOfMajorSurgeries' dibuat untuk melihat apakah ada outlier pada kedua fitur tersebut. Outlier adalah data yang nilainya jauh berbeda dari data lainnya. Pada box plot, outlier ditunjukkan sebagai titik-titik di luar batas atas dan bawah box plot.
-![Weight Outlier](https://github.com/user-attachments/assets/1d9d6498-5abb-49e4-93b5-49dad23149b8)
-![NumberOfMajorSurgeries Outlier](https://github.com/user-attachments/assets/139a962e-e1f2-4d13-897a-8cef5f2cb3a6)
+![Weight Outlier](https://github.com/user-attachments/assets/3c786cd9-0c29-4b5f-b32a-f2e02468ae4a)
+![NumberOfMajorSurgeries Outlier](https://github.com/user-attachments/assets/5806497e-651a-44b6-985c-241fa7d1fd3d)
 
 Selanjutnya, distribusi data pada fitur kategorikal divisualisasikan menggunakan bar plot. Tujuannya untuk melihat distribusi data pada setiap fitur kategorikal, misalnya berapa banyak orang yang memiliki diabetes, memiliki riwayat kanker dalam keluarga, dan sebagainya. 
 ![Distribusi Data pada Fitur Kategorikal](https://github.com/user-attachments/assets/80087ff0-69de-4998-971b-60ed5eb2a43e)
